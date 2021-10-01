@@ -1,1 +1,1 @@
-# App desenvolvido com base no curso de gerencimento de estados com Provider.
+App desenvolvido com base no curso de gerencimento de estados com Provider.
