@@ -1,5 +1,7 @@
 import 'package:bytebank/screens/dashboard/saldo.dart';
 import 'package:bytebank/screens/deposito/formulario.dart';
+import 'package:bytebank/screens/transferencia/formulario.dart';
+import 'package:bytebank/screens/transferencia/ultimas.dart';
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatelessWidget {
@@ -18,17 +20,42 @@ class Dashboard extends StatelessWidget {
               child: SaldoCard(),
               alignment: Alignment.topCenter,
             ),
-            //para ter acesso ao saldo precisamos desse consumer do provider
-            TextButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => FormularioDeposito(),
-                    ));
-              },
-              child: Text('Receber Depósito'),
-            )
+            ButtonBar(
+              alignment: MainAxisAlignment.center,
+              children: [
+                TextButton(
+                  style:
+                      TextButton.styleFrom(backgroundColor: Colors.green[900]),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => FormularioDeposito(),
+                        ));
+                  },
+                  child: Text(
+                    'Receber Depósito',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                TextButton(
+                  style:
+                      TextButton.styleFrom(backgroundColor: Colors.green[900]),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => FormularioTransferencia(),
+                        ));
+                  },
+                  child: Text(
+                    'Nova transferência',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                )
+              ],
+            ),
+            UltimasTramsferencias()
           ],
         ));
   }
